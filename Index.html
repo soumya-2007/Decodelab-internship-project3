@@ -1,63 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Interactive Dashboard</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Dashboard</title>
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<header>
-    <h1>Interactive Dashboard</h1>
-    <button id="themeToggle">🌙 Toggle Theme</button>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div>
+      <h1>Interactive Dashboard</h1>
+      <p>Modern Frontend Project</p>
+    </div>
 
-<main class="container">
+    <div class="header-right">
+      <div id="clock"></div>
+      <button id="themeToggle">🌙 Theme</button>
+    </div>
+  </header>
 
-    <!-- Counter Section -->
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- COUNTER -->
     <section class="card">
-    <h2>Counter App</h2>
+      <h2>Counter App</h2>
 
-    <div class="count" id="count">0</div>
+      <div class="count" id="count">0</div>
 
-    <div class="btn-group">
+      <div class="btn-group">
         <button id="increment">+</button>
         <button id="decrement">-</button>
         <button id="reset">Reset</button>
-    </div>
+      </div>
     </section>
 
-    <!-- Task Manager -->
+    <!-- TASK MANAGER -->
     <section class="card">
-    <h2>Task Manager</h2>
+      <h2>Task Manager</h2>
 
-    <div class="task-input">
-        <input type="text" id="taskInput" placeholder="Enter task"/>
+      <div class="task-input">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter a task..."
+        />
+
         <button id="addTask">Add</button>
-    </div>
+      </div>
 
-    <ul id="taskList"></ul>
+      <ul id="taskList"></ul>
     </section>
 
-    <!-- Score Tracker -->
+    <!-- SCORE TRACKER -->
     <section class="card">
-    <h2>Score Tracker</h2>
+      <h2>Score Tracker</h2>
 
-    <div class="score" id="score">0</div>
+      <div class="score" id="score">0</div>
 
-    <button id="increaseScore">Increase Score</button>
+      <button id="increaseScore">
+        Increase Score
+      </button>
     </section>
 
-    <!-- Notification -->
+    <!-- NOTIFICATIONS -->
     <section class="card">
-    <h2>Notifications</h2>
+      <h2>Notifications</h2>
 
-    <div id="notification">No notifications</div>
+      <div id="notification">
+        Welcome to Interactive Dashboard 🚀
+      </div>
     </section>
 
-</main>
+  </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>
