@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Interactive Dashboard</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    
+
+<header>
+    <h1>Interactive Dashboard</h1>
+    <button id="themeToggle">🌙 Toggle Theme</button>
+</header>
+
+<main class="container">
+
+    <!-- Counter Section -->
+    <section class="card">
+    <h2>Counter App</h2>
+
+    <div class="count" id="count">0</div>
+
+    <div class="btn-group">
+        <button id="increment">+</button>
+        <button id="decrement">-</button>
+        <button id="reset">Reset</button>
+    </div>
+    </section>
+
+    <!-- Task Manager -->
+    <section class="card">
+    <h2>Task Manager</h2>
+
+    <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Enter task"/>
+        <button id="addTask">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+    </section>
+
+    <!-- Score Tracker -->
+    <section class="card">
+    <h2>Score Tracker</h2>
+
+    <div class="score" id="score">0</div>
+
+    <button id="increaseScore">Increase Score</button>
+    </section>
+
+    <!-- Notification -->
+    <section class="card">
+    <h2>Notifications</h2>
+
+    <div id="notification">No notifications</div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
