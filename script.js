@@ -1,60 +1,89 @@
-let count = 0;
+let count = localStorage.getItem("count")
+  ? parseInt(localStorage.getItem("count"))
+  : 0;
 
-const countDisplay =
-document.getElementById("count");
+const countDisplay = document.getElementById("count");
 
-const incrementBtn =
-document.getElementById("increment");
+const incrementBtn = document.getElementById("increment");
 
-const decrementBtn =
-document.getElementById("decrement");
+const decrementBtn = document.getElementById("decrement");
 
-const resetBtn =
+const resetBtn = document.getElementById("reset");
+
 document.getElementById("reset");
 
 function updateCount() {
-countDisplay.textContent = count;
+
+  countDisplay.textContent = count;
+
+
+  localStorage.setItem(
+    "count",
+    count
+  );
 }
 
-incrementBtn.addEventListener("click", () => {
+
+updateCount();
+
+incrementBtn.addEventListener(
+  "click",
+  () => {
+
     count++;
 
     updateCount();
 
     showNotification(
-"Counter Increased ✅"
+      "Counter Increased ✅"
     );
-});
+  }
+);
 
-decrementBtn.addEventListener("click", () => {
+decrementBtn.addEventListener(
+  "click",
+  () => {
+
     count--;
 
     updateCount();
 
     showNotification(
-    "Counter Decreased ⚠️"
+      "Counter Decreased ⚠️"
     );
-}
+  }
 );
 
 resetBtn.addEventListener(
-"click",
-() => {
+  "click",
+  () => {
+
     count = 0;
 
     updateCount();
 
     showNotification(
-    "Counter Reset 🔄"
+      "Counter Reset 🔄"
     );
-}
+  }
 );
-const themeToggle =
-document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
-document.body.classList.toggle("dark");
-});
+
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+themeToggle.addEventListener(
+  "click",
+  () => {
+
+    document.body.classList.toggle(
+      "dark"
+    );
+  }
+);
+
+
 const taskInput =
   document.getElementById("taskInput");
 
@@ -69,20 +98,20 @@ addTaskBtn.addEventListener(
   addTask
 );
 
-// ENTER KEY SUPPORT
+
 
 taskInput.addEventListener(
   "keypress",
   function(e) {
 
     if(e.key === "Enter") {
+
       addTask();
     }
-
   }
 );
 
-// ADD TASK
+
 
 function addTask() {
 
@@ -107,7 +136,7 @@ function addTask() {
   );
 }
 
-
+// CREATE TASK
 
 function createTask(taskText) {
 
@@ -144,7 +173,7 @@ function createTask(taskText) {
   saveTasks();
 }
 
-
+// SAVE TASKS
 
 function saveTasks() {
 
@@ -176,11 +205,15 @@ window.addEventListener(
       ) || [];
 
     savedTasks.forEach((task) => {
+
       createTask(task);
+
     });
 
   }
 );
+
+
 
 let score = 0;
 
@@ -204,6 +237,7 @@ increaseScoreBtn.addEventListener(
   }
 );
 
+
 const notification =
   document.getElementById("notification");
 
@@ -219,6 +253,7 @@ function showNotification(message) {
   }, 3000);
 }
 
+
 function updateClock() {
 
   const clock =
@@ -233,7 +268,3 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 updateClock();
-
-
-
-
